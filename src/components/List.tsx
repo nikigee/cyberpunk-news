@@ -11,7 +11,7 @@ interface Props {
     data: Array<ArticleData>;
 }
 
-const Articles = ({ heading, data }: Props) => {
+const ArticlesList = ({ heading, data }: Props) => {
     return (
         <>
             <h2 className="p-3 fw-bold">{heading}</h2>
@@ -37,4 +37,4 @@ const Articles = ({ heading, data }: Props) => {
     );
 };
 
-export default Articles;
+export default ArticlesList;

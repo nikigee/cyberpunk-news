@@ -1,5 +1,5 @@
 import "./App.css";
-import Articles from "./components/Articles";
+import List from "./components/List";
 
 const data = [
     {
@@ -39,7 +39,7 @@ const App = () => {
         <div className="app-wrap">
             <div className="container text-center">
                 <h1 className="m-4">Network News 54</h1>
-                <Articles data={data} heading="Recommended Articles" />
+                <List data={data} heading="Recommended Articles" />
             </div>
         </div>
     );
