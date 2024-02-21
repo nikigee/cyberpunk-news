@@ -1,45 +1,37 @@
 import "./App.css";
 import List from "./components/List";
-
-const data = [
-    {
-        id: "psychic1",
-        title: "What's the deal with psychics?",
-        author: "[AI] John Doe",
-        img_url:
-            "https://cdn.discordapp.com/attachments/885083261997563944/1208983112244142100/shroud.png?ex=65e54443&is=65d2cf43&hm=f7420c69fa276584d6e10932147824c61299c1af8bac2ce7d3dc59e0fa0abaca&",
-        description:
-            "Psychics are a very rare breed in the world. There's a lot of questions when it comes to them and the Shroud in general, and modern science has come up with very few answers...",
-    },
-    {
-        id: "hammerhead1",
-        title: "Hammerhead Hammered Once Again",
-        author: "Trisha Walkers",
-        img_url: "https://cdna.artstation.com/p/assets/images/images/000/162/350/large/felipecollazo-collazo-felipecollazo-interiorpaintover.jpg?1407709504",
-        description: "The CEO of NanoDigital, Duncan Hammerhead, has once again caused controversy with his latest public outburst. This is not the first time..."
-    },
-    {
-        id: "war1",
-        title: "Trouble in Little China!",
-        author: "Razor",
-        img_url: "https://cdn.discordapp.com/attachments/536930875791638529/1109823366195585164/cyberpunk-2077-concept-art-1024x576.png",
-        description: "Things are heating up in Little China, as the Weng Fang Tong and the Princess Gang are going at it tooth and nail. That's right, the streets will be ablaze with gunfire and explosions and I, for one, can't wait!"
-    },
-    {
-        id: "naturalbeauty1",
-        title: "The Influence of Celebrity Cosmetic Augmentations. Jade Says No",
-        author: "Sofia Balme",
-        img_url: "https://cdn.discordapp.com/attachments/536930875791638529/1109836818964291645/image.png",
-        description: "In a world where cosmetic augmentations have become a widespread trend, concerns are mounting over the detrimental effects on body image and self-esteem, particularly among women who are unable to afford these costly enhancements..."
-    }
-];
+import { new_articles, articles } from "./assets/article_data.json";
 
 const App = () => {
     return (
         <div className="app-wrap">
-            <div className="container text-center">
-                <h1 className="m-4">Network News 54</h1>
-                <List data={data} heading="Recommended Articles" />
+            <div className="p-5 text-start cyberpunk-tri-bg">
+                <div className="container py-5">
+                    <h1 className="text-body-emphasis col-8 mx-auto">
+                        Welcome to N54 News.
+                    </h1>
+                    <p className="lead col-8 mx-auto">
+                        We've been Earth's leading information stream for the
+                        last three decades. You care to be informed. We've
+                        meticulously tailored this selection of articles to
+                        match your past interests and activities, all for your
+                        convenience. This is Network News 54.
+                    </p>
+                    <p className="lead col-8 mx-auto">Follow our Verge <code>@N54News</code> for the latest updates.</p>
+                </div>
+            </div>
+            <div className="container text-center pb-5 mt-3">
+                {(() => {
+                    if (new_articles.length > 0) {
+                        return (
+                            <List
+                                data={new_articles}
+                                heading="New and Trending"
+                            />
+                        );
+                    }
+                })()}
+                <List data={articles} heading="Recommended Articles" />
             </div>
         </div>
     );

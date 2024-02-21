@@ -1,14 +1,31 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {createBrowserRouter} from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from './App'
-import 'bootstrap/dist/css/bootstrap.css'
+import "./scss/cyberpunk.scss";
 
-//const router = createBrowserRouter([]);
+import App from "./App";
+import Article from "./pages/Article";
+import NotFound from "./pages/NotFound";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <App />,
+        errorElement: <NotFound />,
+    },
+    {
+        path: "/article/:articleId",
+        element: <Article />,
+    },
+]);
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+    <React.StrictMode>
+        <Header />
+        <RouterProvider router={router} />
+        <Footer />
+    </React.StrictMode>
+);
