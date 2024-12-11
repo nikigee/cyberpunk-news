@@ -24,16 +24,17 @@ const Article = () => {
             <div className="container text-start">
                 <div className="row justify-content-center mb-5">
                     <div className="col">
-                        <img className="img-fluid" src={story.img_url}></img>
-                        <h1 className="h2 fw-bold mt-3">{story.title}</h1>
+                        <img className="img-fluid mb-3" src={story.img_url}></img>
+                        <div className="my-1"><span className="border px-2 py-1 d-inline-block text-muted border-muted" style={{fontSize: "0.8rem"}}>{story.brand}</span></div>
+                        <h1 className="h2 fw-bold">{story.title}</h1>
                         <p className="text-secondary">{story.description}</p>
-                        <p className="fst-italic">
+                        <p className="">
                             By{" "}
                             <a href="#" className="link-primary">
                                 {story.author}
                             </a>
                         </p>
-                        <div
+                        <div className="article-content"
                             dangerouslySetInnerHTML={createMarkup(
                                 story.content
                             )}
@@ -44,5 +45,7 @@ const Article = () => {
             </div>
         );
 };
+
+
 
 export default Article;

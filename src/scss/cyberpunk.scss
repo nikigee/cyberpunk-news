@@ -71,5 +71,48 @@ $nav-link-color: $accent;
     background: rgb(19, 2, 2);
 }
 
+.article-content img{
+    max-height: 500px;
+}
+
+.link-primary{
+    text-decoration: none;
+}
+
+.hero-banner {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: white;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; /* Behind everything */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 2, 2, 0.6); /* Red tint with transparency */
+    z-index: -1; /* Behind content, above the video */
+}
+
+.hero-banner .container {
+    position: relative;
+    z-index: 1; /* Content above the video */
+}
+
 // this goes last
 @import "/node_modules/bootstrap/scss/bootstrap";
