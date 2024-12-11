@@ -12,12 +12,12 @@ import Footer from "./components/Footer";
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/cyberpunk-news/",
         element: <App />,
         errorElement: <NotFound />,
     },
     {
-        path: "/article/:articleId",
+        path: "/cyberpunk-news/article/:articleId",
         element: <Article />,
     },
 ]);

@@ -34,7 +34,7 @@ const ArticlesList = ({ heading, data }: Props) => {
                                     <div className="text-muted">{item.brand}</div>
                                     <Link
                                         className="link-light link-underline-opacity-0"
-                                        to={"/article/" + item.id}
+                                        to={"/cyberpunk-news/article/" + item.id}
                                     >
                                         <p className="h3 fw-bold">{item.title}</p>
                                     </Link>
