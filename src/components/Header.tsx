@@ -5,7 +5,7 @@ const Header = () => {
         <div className="container">
             <header className="d-flex flex-wrap justify-content-center py-4">
                 <a
-                    href="/"
+                    href="/cyberpunk-news/"
                     className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-light text-decoration-none"
                 >
                     <img src={logo} width="32" height="37" className="me-2" />

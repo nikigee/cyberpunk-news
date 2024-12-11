@@ -12,7 +12,7 @@ const App = () => {
                     loop
                     muted
                     playsInline
-                    src="/cyberpunk_city.mp4"
+                    src="/cyberpunk-news/cyberpunk_city.mp4"
                 />
                 <div className="overlay"></div>
                 <div className="container py-5">
