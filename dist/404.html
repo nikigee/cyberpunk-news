@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting...</title>
     <script>
-        // Redirect to the root of your React app
-        const pathname = window.location.pathname.replace('/cyberpunk-news', '');
-        window.location.href = '/cyberpunk-news/' + pathname;
+        // Check if already in the base path
+        const currentPath = window.location.pathname;
+        const basePath = '/cyberpunk-news/';
+        if (!currentPath.startsWith(basePath)) {
+            // Redirect to the correct base path
+            const newPath = basePath + currentPath.replace(/^\//, '');
+            window.location.href = newPath;
+        }
     </script>
 </head>
 <body>
